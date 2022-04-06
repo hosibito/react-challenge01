@@ -142,6 +142,9 @@ function Coin() {
   const chartMatch = useMatch(PUrl+"/:coinId/chartline");
   const chartcandalstickMatch = useMatch(PUrl+"/:coinId/chartcandalstick");
 
+  console.log(priceMatch )
+  console.log(chartMatch )
+  console.log(chartcandalstickMatch )
 
   const { isLoading: infoLoading, data: infoData } = useQuery<InfoData>(
     ["info", coinId],
