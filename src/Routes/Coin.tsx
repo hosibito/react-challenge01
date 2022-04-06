@@ -137,10 +137,10 @@ interface PriceData {
 function Coin() {
   const { coinId } = useParams();
   const { state } = useLocation() as RouterState;  
-  const priceMatch = useMatch("/:coinId/price");
-  const chartMatch = useMatch("/:coinId/chartline");
-  const chartcandalstickMatch = useMatch("/:coinId/chartcandalstick");
   const PUrl = process.env.PUBLIC_URL  
+  const priceMatch = useMatch(PUrl+"/:coinId/price");
+  const chartMatch = useMatch(PUrl+"/:coinId/chartline");
+  const chartcandalstickMatch = useMatch(PUrl+"/:coinId/chartcandalstick");
 
 
   const { isLoading: infoLoading, data: infoData } = useQuery<InfoData>(
