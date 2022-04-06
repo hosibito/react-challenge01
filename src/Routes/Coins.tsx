@@ -54,7 +54,8 @@ interface ICoins {
 
 
 function Coins() {  
-    const { isLoading, data } = useQuery<ICoins[]>("allCoins", getCoins);   
+    const { isLoading, data } = useQuery<ICoins[]>("allCoins", getCoins);  
+    const PUrl = process.env.PUBLIC_URL  
     
     return (
         <Container>         
@@ -64,7 +65,7 @@ function Coins() {
                 <CoinsList>
                     {data?.slice(0,10).map((coin) => (
                     <Coin key={coin.id}>
-                        <Link to={`/${coin.id}`}  state={ { name : coin.name,  rank: coin.rank } }  >
+                        <Link to={`${PUrl}/${coin.id}`}  state={ { name : coin.name,  rank: coin.rank } }  >
                         <Img src={`https://cryptoicon-api.vercel.app/api/icon/${coin.symbol.toLowerCase()}`}/>
                         {coin.name} &rarr;
                         </Link>

@@ -43,10 +43,11 @@ const ThemeBtn = styled.div`
 function Header() {  
     const [ IsDark, setThemeIsDark] = useRecoilState(isDarkAtom) 
     const toggleThemeIsDark = () => setThemeIsDark((prev) => !prev)
+    const PUrl = process.env.PUBLIC_URL 
     return (
         <Container> 
             <LinkHome>
-                <Link to="/">Home</Link>
+                <Link to={PUrl + "/"}>Home</Link>
             </LinkHome>
             <Title>코인</Title>
             <ThemeBtn onClick={toggleThemeIsDark}>change Theme : {IsDark ? "Dark" :"Light"}</ThemeBtn>

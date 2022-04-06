@@ -7,12 +7,14 @@ import Price from "./Routes/Price";
 import ChartCandalStick from "./Routes/ChartCandlstick";
 
 function Router() {  
+    const PUrl = process.env.PUBLIC_URL 
+    console.log(process.env.PUBLIC_URL)
     return (   
         <BrowserRouter>
             <Header/>   
             <Routes>         
-                <Route path={process.env.PUBLIC_URL + "/"} element={<Coins />}></Route>
-                <Route path={process.env.PUBLIC_URL + "/:coinId"} element={<Coin />}>
+                <Route path={PUrl + "/"} element={<Coins />}></Route>
+                <Route path={PUrl + "/:coinId"} element={<Coin />}>
                     <Route path="chartline" element={<Chart />} />
                     <Route path="chartcandalstick" element={<ChartCandalStick />} />
                     <Route path="price" element={<Price />} /> 

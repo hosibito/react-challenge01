@@ -140,6 +140,7 @@ function Coin() {
   const priceMatch = useMatch("/:coinId/price");
   const chartMatch = useMatch("/:coinId/chartline");
   const chartcandalstickMatch = useMatch("/:coinId/chartcandalstick");
+  const PUrl = process.env.PUBLIC_URL  
 
 
   const { isLoading: infoLoading, data: infoData } = useQuery<InfoData>(
@@ -195,13 +196,13 @@ function Coin() {
 
             <Tabs>
               <Tab isActive={chartMatch !== null}>
-                <Link to={`/${coinId}/chartline`}>Chart(line)</Link>
+                <Link to={`${PUrl}/${coinId}/chartline`}>Chart(line)</Link>
               </Tab>
               <Tab isActive={chartcandalstickMatch !== null}>
-                <Link to={`/${coinId}/chartcandalstick`}>Chart(Candalstick)</Link>
+                <Link to={`${PUrl}/${coinId}/chartcandalstick`}>Chart(Candalstick)</Link>
               </Tab>
               <Tab isActive={priceMatch !== null}>
-                <Link to={`/${coinId}/price`}>Price</Link>
+                <Link to={`${PUrl}/${coinId}/price`}>Price</Link>
               </Tab>
             </Tabs>
 
