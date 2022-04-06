@@ -53,6 +53,6 @@
   "devDependencies": {
     "@types/styled-components": "^5.1.24"
   },
-  "homepage": "https://hosibito.github.io/react-challenge01"
+  "homepage": "https://hosibito.github.io/react-challenge01/"
 
 }

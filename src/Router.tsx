@@ -11,8 +11,8 @@ function Router() {
         <BrowserRouter>
             <Header/>   
             <Routes>         
-                <Route path={process.env.PUBLIC_URL+ "/react-challenge01"+ "/"} element={<Coins />}></Route>
-                <Route path={process.env.PUBLIC_URL + "/react-challenge01"+ "/:coinId"} element={<Coin />}>
+                <Route path={process.env.PUBLIC_URL + "/"} element={<Coins />}></Route>
+                <Route path={process.env.PUBLIC_URL + "/:coinId"} element={<Coin />}>
                     <Route path="chartline" element={<Chart />} />
                     <Route path="chartcandalstick" element={<ChartCandalStick />} />
                     <Route path="price" element={<Price />} /> 
